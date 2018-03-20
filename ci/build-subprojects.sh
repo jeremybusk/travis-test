@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
-if [ -d "${SUBPROJECT}" -f "${SUBPROJECT}/build.sh" ]; then
-    ${SUBPROJECT}/build.sh
+if [ -d "${SUBPROJECT}" -a -f "${SUBPROJECT}/build.sh" ]; then
+    echo "${SUBPROJECT}/build.sh"
+    #${SUBPROJECT}/build.sh
+    (cd "${SUBPROJECT}"; bash ./build.sh)
 elif [ -f "build.sbt" ]; then
     echo "build.sbt"
 else
