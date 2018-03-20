@@ -1,0 +1,36 @@
+language: scala
+scala:
+  - 2.12.4
+sbt_args: -no-colors
+dist: trusty
+env:
+  - SUBPROJECT=sub1
+  - SUBPROJECT=main
+script:
+  - ./ci/build-subprojects.sh
+sudo: required
+install:
+  - ./ci/install-deps.sh
+cache:
+  directories:
+    - "$HOME/.ivy2/cache"
+    - "$HOME/.sbt"
+notifications:
+  email:
+    recipients:
+      - jeremybusk@gmail.com 
+    on_success: never
+    on_failure: never 
+addons:
+    apt:
+        sources:
+            - sourceline: 'deb https://dl.bintray.com/sbt/debian /'
+        packages:
+            - sbt
+            - jflex
+            - haskell-platform
+            - rpm
+            - fakeroot
+
+after_success:
+  - "./ci/create-artifacts.sh"
