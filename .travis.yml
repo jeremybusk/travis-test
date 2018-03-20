@@ -27,10 +27,10 @@ addons:
             - sourceline: 'deb https://dl.bintray.com/sbt/debian /'
         packages:
             - sbt
-            - jflex
-            - haskell-platform
-            - rpm
-            - fakeroot
+            # - jflex
+            # - haskell-platform
+            # - rpm
+            # - fakeroot
 
 after_success:
   - "./ci/create-artifacts.sh"
