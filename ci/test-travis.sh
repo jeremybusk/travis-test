@@ -5,4 +5,4 @@ else
     echo "no travis"
 fi
 echo "finished travis test"
-exit !
+exit 1
