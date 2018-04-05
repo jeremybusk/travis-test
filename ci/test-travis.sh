@@ -21,6 +21,8 @@ apt install -y docker-ce
 
 echo "fff this below"
 echo "${fthis}"
+echo "==JTEST=="
+echo "${JTEST}"
 
 
 if [ "${TRAVIS}" = "true" ]; then
