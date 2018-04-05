@@ -11,7 +11,16 @@ echo "running in script"
 # echo "finished travis test"
 # exit 1
 
-if [ "${TRAVIS}" = "false" ]; then
+# Install Docker-CE
+apt update
+apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  apt-key add -
+add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu    xenial    stable"
+apt update
+apt install -y docker-ce
+
+
+if [ "${TRAVIS}" = "true" ]; then
     echo "is travis"
     #docker_user="$DOCKER_USERNAME" 
     #docker_pass="$DOCKER_PASSWORD" 
