@@ -15,7 +15,7 @@ if [ -d "${SUBPROJECT}" -a -f "${SUBPROJECT}/build.sh" ]; then
     echo "=========="
 #docker rm -f aaaaaaa-pusher
 #docker run -dit -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_USERNAME="${DOCKER_USERNAME}" -e DOCKER_PASSWORD="${DOCKER_PASSWORD}" -e TRAVIS="${TRAVIS}" --name pusher ubuntu:16.04
-docker run -dit -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_USERNAME DOCKER_PASSWORD -e TRAVIS --name pusher ubuntu:16.04
+docker run -dit -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_USERNAME DOCKER_PASSWORD -e TRAVIS -e fthis="fthisvariablevalue" --name pusher ubuntu:16.04
     #docker run -dit --name pusher ubuntu:16.04
     docker cp test-travis.sh pusher:/
     docker exec -it pusher /bin/bash -c "./test-travis.sh"
