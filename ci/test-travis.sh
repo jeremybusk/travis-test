@@ -19,6 +19,9 @@ add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu
 apt update
 apt install -y docker-ce
 
+echo "fff this below"
+echo "${fthis}"
+
 
 if [ "${TRAVIS}" = "true" ]; then
     echo "is travis"
