@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#set -exo pipefail
-set -v
+set -exo pipefail
+#set -v
 echo "running in script"
 
 # if [[ $TRAVIS = "true" ]]; then
@@ -26,4 +26,5 @@ else
     #docker tag  ${docker_src_repo}:${docker_src_tag} ${docker_dst_repo}
     #docker push ${docker_dst_repo}
 fi
+echo "finished running script"
 exit 1
