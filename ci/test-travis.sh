@@ -30,7 +30,8 @@ if [ "${TRAVIS}" = "true" ]; then
     #docker_user="$DOCKER_USERNAME" 
     #docker_pass="$DOCKER_PASSWORD" 
     #docker login -u "${docker_user}" -p "${docker_pass}"  > /dev/null 2>&1
-    docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+    #docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     echo "docker login worked"
     #docker tag  ${docker_src_repo}:${docker_src_tag} ${docker_dst_repo}
     #docker push ${docker_dst_repo}
