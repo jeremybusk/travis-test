@@ -6,7 +6,8 @@
 if [ -d "${SUBPROJECT}" -a -f "${SUBPROJECT}/build.sh" ]; then
     # ${SUBPROJECT}/build.sh
     echo "start"
-    docker run -dit -v /var/run/docker.sock:/var/run/docker.sock --name pusher ubuntu:16.04
+    # docker run -dit -v /var/run/docker.sock:/var/run/docker.sock --name pusher ubuntu:16.04
+    docker run -dit --name pusher ubuntu:16.04
     docker cp test-travis.sh pusher:/
     docker exec -it pusher /bin/bash -c "./test-travis.sh"
 # exit 1
