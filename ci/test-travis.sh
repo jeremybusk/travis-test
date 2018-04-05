@@ -1,4 +1,7 @@
-set -exo pipefail
+#!/usr/bin/env bash
+#set -exo pipefail
+set -v
+echo "running in script"
 
 # if [[ $TRAVIS = "true" ]]; then
 #     echo "yes running on travis"
