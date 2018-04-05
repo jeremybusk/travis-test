@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-if [[ $TRAVIS = "true" ]]; then
-    echo "yes running on travis"
-else
-    echo "no travis"
-fi
+#set -euo pipefail
+#if [[ $TRAVIS = "true" ]]; then
+#    echo "yes running on travis"
+#else
+#    echo "no travis"
+#fi
 
 sleep 1000
 
