@@ -8,6 +8,10 @@ if [ -d "${SUBPROJECT}" -a -f "${SUBPROJECT}/build.sh" ]; then
     echo "start"
     # docker run -dit -v /var/run/docker.sock:/var/run/docker.sock --name pusher ubuntu:16.04
     cd ci/
+    echo "=========="
+    echo ${CI}
+    echo ${TRAVIS}
+    echo "=========="
 docker run -dit -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_USERNAME="${DOCKER_USERNAME}" DOCKER_PASSWORD="${DOCKER_PASSWORD}" -e TRAVIS="${TRAVIS}" --name ${pusher_docker_name} ubuntu:16.04
     docker run -dit --name pusher ubuntu:16.04
     docker cp test-travis.sh pusher:/

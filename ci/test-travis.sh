@@ -23,6 +23,7 @@ if [ "${TRAVIS}" = "false" ]; then
 else
     # docker login
     echo "not travis"
+    docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
     #docker tag  ${docker_src_repo}:${docker_src_tag} ${docker_dst_repo}
     #docker push ${docker_dst_repo}
 fi
